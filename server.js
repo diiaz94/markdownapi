@@ -5,7 +5,7 @@ let express = require('express'),
     router = require('./app/routers/router'),
     config = require('./config/main').get(process.env.NODE_ENV);
 
-let database = process.env.NODE_ENV && process.env.NODE_ENV.database || config.database;
+let database = process.env.database || config.database;
 let app = express();
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
